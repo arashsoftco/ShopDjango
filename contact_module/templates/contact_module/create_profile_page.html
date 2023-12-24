@@ -1,0 +1,41 @@
+{% extends 'shared/_layout.html' %}
+
+{% block title %}
+    contact us
+{% endblock %}
+
+{% block content %}
+    <div id="contact-page" class="container">
+        <div class="bg">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="contact-form">
+                        <h2 class="title text-center">Record profile</h2>
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form row" action="{% url 'create_profile_page' %}"
+                              method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form }}
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right">submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="contact-info">
+                        <h2 class="title text-center">Contacts</h2>
+                        <address>
+                            <p>Technography Group 1614</p>
+                            <p>Iran - Azar With Western Iran - Khoi</p>
+                            <p>Shams entertainment business community - 2nd floor - No. 54</p>
+                            <p>Phone Call: 80 21 24 36 044</p>
+                            <p>fax : 80 21 24 36 044</p>
+                            <p style="font-family: tahoma;">E-mail : info@1614GP.ir</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
